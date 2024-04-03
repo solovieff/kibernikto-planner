@@ -8,6 +8,9 @@ capabilities.
 
 Mostly a set of tools and extended Kibernikto bots.
 
+<img width="526" alt="image" src="https://github.com/solovieff/kibernikto-planner/assets/5033247/c3801b89-fa7f-4840-963b-db1a1c439214">
+
+
 **run code**
 (assuming you set the environment yrself)
 
