@@ -1,0 +1,4 @@
+aiosqlite
+croniter
+aiocron
+git+ssh://git@github.com/solovieff/kibernikto.git
