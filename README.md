@@ -1,7 +1,7 @@
 # kibernikto-planner
 
 Basic telegram AI planner. Can use voice messages.  
-Can be updated to retrieve plans etc, just demo functionality for now.
+Can be updated to retrieve plans etc, just a demo functionality for now.
 Reminds of planned messages.
 Uses [Kibernikto library](https://github.com/solovieff/kibernikto) as a core and is mostly here to show it's
 capabilities.
