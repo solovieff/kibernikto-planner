@@ -9,9 +9,12 @@ capabilities.
 
 **All you need to use functions with Kibernikto is:**
 
-- Create you functions in 'tools' package and import them as in `main.py` file. See `tools/plan_event.py` for details.
+- Create you functions in 'tools' package and import them as in `main.py` file.
+  See [tools/plan_event.py](https://github.com/solovieff/kibernikto-planner/blob/main/planner/tools/plan_event.py) for
+  details. Pay attention to namings!
 - Optionally: create Kibernikto child class to extend the functionality.  
-  See `bots/tooles/_kiberplanner.py` it adds current time to default messages.
+  See [_kiberplanner bot](https://github.com/solovieff/kibernikto-planner/blob/main/planner/bots/tooler/_kiberplanner.py)
+  it adds current time to default system message.
 - Use your bot when running a dispatcher like `await comprehensive_dispatcher.async_start(Kiberplanner, tools_to_use)`
   in `main.py`
 
