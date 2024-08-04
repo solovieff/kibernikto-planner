@@ -1,6 +1,6 @@
 # kibernikto-planner
 
-Demonstrates how easy it is to OpenAi tools with Kibernikto as a core.  
+Demonstrates how easy it is to use OpenAi tools with Kibernikto as a core.  
 Basic telegram AI planner. Can use voice messages.  
 Can be updated to retrieve plans etc, just a demo functionality for now.
 Reminds of planned messages.
