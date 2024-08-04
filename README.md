@@ -1,10 +1,19 @@
 # kibernikto-planner
 
+Demonstrates how easy it is to OpenAi tools with Kibernikto as a core.  
 Basic telegram AI planner. Can use voice messages.  
 Can be updated to retrieve plans etc, just a demo functionality for now.
 Reminds of planned messages.
 Uses [Kibernikto library](https://github.com/solovieff/kibernikto) as a core and is mostly here to show it's
 capabilities.
+
+**All you need to use functions with Kibernikto is:**
+
+- Create you functions in 'tools' package and import them as in `main.py` file. See `tools/plan_event.py` for details.
+- Optionally: create Kibernikto child class to extend the functionality.  
+  See `bots/tooles/_kiberplanner.py` it adds current time to default messages.
+- Use your bot when running a dispatcher like `await comprehensive_dispatcher.async_start(Kiberplanner, tools_to_use)`
+  in `main.py`
 
 Mostly a set of tools and extended Kibernikto bots.
 
@@ -23,10 +32,8 @@ Run `main.py` file using the environment provided.
 ```dotenv
 OPENAI_API_KEY=sk-XXXXXXXXXXXXXXXX
 OPENAI_BASE_URL=https://api.openai.com/v1
-OPENAI_API_MODEL=gpt-4-turbo-preview
-#OPENAI_API_MODEL=gpt-4
-#OPENAI_API_MODEL=gpt-3.5-turbo
-OPENAI_MAX_TOKENS=850
+OPENAI_API_MODEL=gpt-4o
+OPENAI_MAX_TOKENS=550
 OPENAI_MAX_MESSAGES=5
 OPENAI_TEMPERATURE=0.1
 
@@ -40,6 +47,9 @@ TG_REACTION_CALLS=["hi","hola", "plan", "schedule"]
 TG_STICKER_LIST=["CAACAgIAAxkBAAELx29l_2OsQzpRWhmXTIMBM4yekypTOwACdgkAAgi3GQI1Wnpqru6xgTQE"]
 TG_BOT_KEY=XXXXXXXXXX:XXXxxxXXXxxxxXXXxxx
 TG_MASTER_ID=XXXXXXXXX
+#everyone can talk
+TG_PUBLIC=true
+# say hi on startup
 TG_SAY_HI=true
 TG_CHUNK_SENTENCES=5
 

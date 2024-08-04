@@ -10,7 +10,7 @@ from croniter import croniter
 
 # https://pypi.org/project/cron-schedule-triggers/
 
-async def plan_event(cron_string: str, alert_message: str, periodic: bool, master_id: str):
+async def plan_event(cron_string: str, alert_message: str, periodic: bool = False, key: str = "unknown"):
     """Plan the event"""
 
     plan_info = {
@@ -23,7 +23,7 @@ async def plan_event(cron_string: str, alert_message: str, periodic: bool, maste
 
         next_run = croniterchik.get_next(ret_type=datetime.datetime)
         logging.info(f"first run: {next_run}")
-        await _add_event(cron=cron_string, alert_message=alert_message, periodic=periodic, user_id=master_id)
+        await _add_event(cron=cron_string, alert_message=alert_message, periodic=periodic, user_id=key)
     except Exception as error:
         print(traceback.format_exc())
         return {
@@ -64,7 +64,7 @@ def plan_event_tool():
                                        "Drink water every 2 hours: a periodic task"
                     },
                 },
-                "required": ["cron_string", "alert_message"]
+                "required": ["cron_string", "alert_message", "periodic"]
             }
         }
     }

@@ -5,19 +5,19 @@ from kibernikto.interactors.tools import get_tools_from_module, Toolbox
 from kibernikto.telegram import comprehensive_dispatcher
 from kibernikto.utils.environment import configure_logger, print_banner
 from planner import tools
-from planner.bots.tooler import Kibertooler
+from planner.bots.tooler import Kiberplanner
 from planner.scheduler import start_scheduler
 
 
-async def start_aiogram(tools: List[Toolbox]):
+async def start_aiogram(tools_to_use: List[Toolbox]):
     configure_logger()
     print_banner()
 
-    await comprehensive_dispatcher.async_start(Kibertooler, tools)
+    await comprehensive_dispatcher.async_start(Kiberplanner, tools_to_use)
 
 
-async def run_kibernikto_with_scheduler(tools):
-    await asyncio.gather(start_aiogram(tools),
+async def run_kibernikto_with_scheduler(tools_to_use: List[Toolbox]):
+    await asyncio.gather(start_aiogram(tools_to_use),
                          start_scheduler())
 
 
@@ -34,6 +34,6 @@ if __name__ == '__main__':
     asyncio.set_event_loop(loop)
 
     try:
-        loop.run_until_complete(run_kibernikto_with_scheduler(tools=tools_definitions))
+        loop.run_until_complete(run_kibernikto_with_scheduler(tools_to_use=tools_definitions))
     except (KeyboardInterrupt, SystemExit):
         pass
